@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Chamados</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card login-card">
+        <h1>Acesso</h1>
+        <form>
+          <label for="usuario">Usuário</label>
+          <input id="usuario" type="text" placeholder="Digite seu usuário" />
+
+          <label for="senha">Senha</label>
+          <div class="password-wrapper">
+            <input id="senha" type="password" placeholder="Digite sua senha" />
+            <button type="button" id="toggleSenha" class="toggle-password">Mostrar</button>
+          </div>
+
+          <button type="submit" class="primary-btn">Entrar</button>
+        </form>
+      </section>
+
+      <section class="card chamados-card" id="chamadosContainer">
+        <h2>Chamados</h2>
+        <p class="empty-state" id="emptyState">Nenhum chamado cadastrado no momento.</p>
+
+        <form id="chamadoForm" class="chamado-form">
+          <label for="titulo">Título do chamado</label>
+          <input id="titulo" type="text" placeholder="Ex.: Falha no sistema" required />
+
+          <label>Quem irá executar</label>
+          <div class="executor-options" id="executorOptions">
+            <button type="button" class="executor-btn manutencao" data-tipo="manutencao">Manutenção</button>
+            <button type="button" class="executor-btn governanca" data-tipo="governanca">Governança</button>
+          </div>
+
+          <input type="hidden" id="tipoServico" required />
+          <button type="submit" class="primary-btn">Cadastrar chamado</button>
+        </form>
+
+        <div class="lista-chamados" id="listaChamados"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
